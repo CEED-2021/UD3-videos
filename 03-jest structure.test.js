@@ -6,7 +6,7 @@ function sum(a,b) {
 
 describe('Function sum()', () => {
 
-    describe('when correct parameters are provided', () => {
+    describe('when two parameters are provided', () => {
         test('adds the numbers', () => {
             expect(sum(2,2)).toBe(4);
         })
