@@ -1,0 +1,11 @@
+{
+  "name": "UD3-videos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:CEED-2021/UD3-videos.git",
+  "author": "Alvaro Maceda <alvaro@alvaromaceda.es>",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
