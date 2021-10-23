@@ -1,3 +1,10 @@
+
+
+
+function breakProgram(description) {
+  throw 'Terrible error: ' + description;
+}
+
 describe('Testing assertions', function(){
 
   test('toBe', () => {
@@ -40,7 +47,7 @@ describe('Testing assertions', function(){
     expect(o1).toEqual(o2);
   })
 
-  test.only('toBeTruthy / toBeFalsy', () => {
+  test('toBeTruthy / toBeFalsy', () => {
     expect('banana').toBeTruthy();
     expect({}).toBeTruthy();
 
@@ -48,27 +55,48 @@ describe('Testing assertions', function(){
     expect(NaN).toBeFalsy();
   })
 
-  test.skip('toMatch - regexp y string', () => {
+  test('toMatch', () => {
+    expect('555.121.212').toMatch(/[0-9.]+/);
+    expect('The banana was from La Palma').toMatch('banana');
+  })
+
+  test('toMatchObject', () => {
+    const studentData = {
+      name: 'James Bond',
+      birthDate: '11 November 1920',
+      preferences: 'Shaken, not stirred'
+    }
+    const obtainedData = {
+      name: 'James Bond',
+      birthDate: '11 November 1920',
+    }
+
+    expect(studentData).not.toBe(obtainedData);
+    expect(studentData).not.toEqual(obtainedData);
+
+    expect(studentData).toMatchObject(obtainedData);
+    expect(obtainedData).not.toMatchObject(studentData);
+  })
+
+  test.only('toContain / toContainEqual', () => {
+
+    const array = ['a','b',[2,3],'c']
+
+    expect(array).toContain('a')
+    expect(array).not.toContain([2,3])
+
+    expect(array).toContainEqual([2,3])
+  })
+
+  test.only('arrayContaining', () => {
 
   })
 
-  test.skip('toMatchObject', () => {
+  test('toThrow', () => {
+    // This won't work:
+    // expect(breakProgram('banana')).toThrow('papaya')
 
-  })
-
-  test.skip('toContain', () => {
-
-  })
-
-  test.skip('toContainEqual', () => {
-
-  })
-
-  test.skip('arrayContainig', () => {
-
-  })
-
-  test.skip('toThrow', () => {
-
+    expect(() => breakProgram('banana')).toThrow(/banana/)
+    expect(() => breakProgram('banana')).not.toThrow(/papaya/)
   })
 })
