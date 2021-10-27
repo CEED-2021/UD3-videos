@@ -1,12 +1,15 @@
 {
-  "name": "ud3-videos-w5",
+  "name": "ud3-videos-w6",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:CEED-2021/UD3-videos.git",
   "author": "Alvaro Maceda <alvaro@alvaromaceda.es>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "jest": "^27.3.1"
+    "chromedriver": "^95.0.0",
+    "geckodriver": "^2.0.4",
+    "jest": "^27.3.1",
+    "selenium-webdriver": "^4.0.0"
   },
   "scripts": {
     "test": "jest"
