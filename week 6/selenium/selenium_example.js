@@ -3,7 +3,10 @@ require("chromedriver");
 
 
 function expect(expected, received) {
-    if(expected==received) return;
+    if(expected==received) {
+        console.log('assertion passed');
+        return
+    }
     throw `Assertion error. Expected ${expected}, received ${received}`
 }
 
