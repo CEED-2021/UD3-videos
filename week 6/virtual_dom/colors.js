@@ -13,10 +13,10 @@ function installHandlers() {
 }
 
 // Jest version
-module.exports = { 
-  installHandlers 
-}
-// Browser version
-// export { 
+// module.exports = { 
 //   installHandlers 
 // }
+// Browser version
+export { 
+  installHandlers 
+}
