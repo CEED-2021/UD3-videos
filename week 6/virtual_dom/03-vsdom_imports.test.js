@@ -5,18 +5,7 @@ const fs = require("fs");
 const HTML_FILE = './colors.html';
 const HTML_FROM_FILE = fs.readFileSync(HTML_FILE);
 
-function changeColor(event) {
-  let parent = document.getElementById('parent');
-  let color = getComputedStyle(event.target).backgroundColor;
-  parent.style.backgroundColor = color
-}
-
-function installHandlers() {
-  let childs = document.getElementsByClassName('child');
-  for(let child of childs) {
-    child.onclick = changeColor;
-  }
-}
+const { installHandlers } = require('./colors.js')
 
 describe('testing virtual DOM', () => {
   beforeEach(() => {
@@ -37,5 +26,5 @@ describe('testing virtual DOM', () => {
     // Assert
     const parentColor = window.getComputedStyle(parent).backgroundColor;
     expect(parentColor).toBe('red');
-  });
+  });    
 })
