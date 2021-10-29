@@ -20,7 +20,7 @@ describe('testing virtual DOM', () => {
     installHandlers();
 
     // Act
-    const event = new Event('click', { bubbles: true, cancelable: false });
+    const event = new Event('click');
     red.dispatchEvent(event);
 
     // Assert
