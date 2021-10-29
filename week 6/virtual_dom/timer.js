@@ -33,7 +33,7 @@ function tick() {
   }
   
   getCounter().innerHTML = counter.toString();
-  counter -= 2;
+  counter -= 1;
 }
 
 function boom() {
