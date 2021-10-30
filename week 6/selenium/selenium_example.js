@@ -13,7 +13,12 @@ function expect(expected, received) {
 async function example() {
     const URL = 'https://duckduckgo.com/';
 
-    let driver = await new Builder().forBrowser('chrome').build();
+    let driver = await new Builder()
+        .forBrowser('chrome')
+        .build();
+    // To move the browser:
+    //await driver.manage().window().setRect( {x: -10000, y:0})
+
 
     await driver.get(URL);
 
