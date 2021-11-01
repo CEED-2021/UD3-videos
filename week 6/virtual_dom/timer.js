@@ -31,7 +31,7 @@ function tick() {
     boom();
     return
   }
-  
+
   getCounter().innerHTML = counter.toString();
   counter -= 1;
 }
@@ -42,12 +42,9 @@ function boom() {
   startButtonEnabled(true);
 }
 
-// Jest version
-module.exports = { 
-  installHandlers 
-}
+try {
+  module.exports = {
+    installHandlers
+  }
+}catch(e) {}
 
-// Browser version
-// export { 
-//   installHandlers 
-// }

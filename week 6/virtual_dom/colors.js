@@ -6,17 +6,14 @@ function changeColor(event) {
 
 function installHandlers() {
   let childs = document.getElementsByClassName('child');
-  
+
   for (let child of childs) {
     child.onclick = changeColor;
   }
 }
 
-// Jest version
-// module.exports = { 
-//   installHandlers 
-// }
-// Browser version
-export { 
-  installHandlers 
-}
+try {
+  module.exports = {
+    installHandlers
+  }
+} catch(e) {}
