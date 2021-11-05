@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=pd, initial-scale=1.0">
+  <title>Change colors</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
+    #parent {
+      width: 90vw;
+      height: 90vh;
+      background-color: white;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      border: 10px solid black;
+      padding-top: 50px;      ;
+    }
+    .child {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+    .red { background-color: red; }
+    .blue { background-color: blue;}
+    .yellow { background-color: yellow;}
+  </style>
+</head>
+<body>
+  <!--
+    Crea una página HTML con un DIV que contenga en su interior al menos tres DIV de diferentes
+    colores. Al pulsar uno de los <div> el padre se podrá del color de ese elemento.
+
+    Debes usar la misma función para manejar los eventos en los tres <div> (no vale que hagas una
+    función específica para cada uno)
+  -->
+
+  <div id="parent">
+    <div class="child red"></div>
+    <div class="child blue"></div>
+    <div class="child yellow"></div>
+  </div>
+
+  <script>
+    function changeColor(event) {
+      let parent = document.getElementById('parent');
+      let color = getComputedStyle(event.target).backgroundColor;
+      parent.style.backgroundColor = color
+    }
+
+    let childs = document.getElementsByClassName('child');
+    for(child of childs) {
+      child.onclick = changeColor;
+    }
+  </script>
+</body>
+</html>
